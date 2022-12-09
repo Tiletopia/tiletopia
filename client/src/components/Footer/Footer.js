@@ -5,7 +5,11 @@ import classes from './Footer.css'
 class Footer extends Component {
     render(){
         return(
-        <h1 className='Footer'>Footer</h1> 
+        <div className='Footer'>
+            <button>Collect</button>
+            <button>Buy</button>
+            <button>Upgrade</button>
+        </div> 
         )
    } 
 }
