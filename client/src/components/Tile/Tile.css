@@ -1,6 +1,16 @@
 .tile{
-    width: 50px;
-    height: 50px;
+    width: 8vw;
+    height: 8vw;
     border: 1px solid black;
+    margin: 2vh 0;
+    background-color: #CCD5AE;
+    text-align: center;
+}
 
+.tile:hover{
+    background-color: #E9EDC9;
+}
+
+.tile.locked{
+    background-color: darkgrey;
 }
