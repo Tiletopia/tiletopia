@@ -1,19 +1,16 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
+import BuyList from "../Buy/BuyList";
 
-import classes from './Footer.css'
+import classes from "./Footer.css";
 
 class Footer extends Component {
-    render(){
-        return(
-        <div className='Footer'>
-            <button>Collect</button>
-            <button>Buy</button>
-            <button>Upgrade</button>
-        </div> 
-        )
-   } 
+  render() {
+    return (
+      <div className="Footer">
+        <BuyList></BuyList>
+      </div>
+    );
+  }
 }
-
-
 
 export default Footer;
