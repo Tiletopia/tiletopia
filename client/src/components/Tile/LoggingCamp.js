@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import tree from "../../GameImages/tree.jpeg";
 
 class LoggingCamp extends Component {
   render() {
@@ -12,7 +13,7 @@ class LoggingCamp extends Component {
       <div className="tile">
         <h1># of Camps Owned:{CampsOwned}</h1>
         <h1>{this.props.children}</h1>
-        <img src="https://via.placeholder.com/50"></img>
+        <img src={tree} height="45px"></img>
       </div>
     );
   }

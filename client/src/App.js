@@ -14,7 +14,7 @@ function App() {
       <Header ruler="User" civ="Civ" currency="68 coins"></Header>
       <Display>
         <div className="row">
-          <Tile> Primal</Tile>
+          <Tile>Pioneers</Tile>
           <Homestead> Homestead</Homestead>
           <Tannery> Tannery</Tannery>
           <LoggingCamp> Logging Camp</LoggingCamp>
