@@ -1,49 +1,59 @@
+import React from 'react';
 import logo from "./logo.svg";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import "./App.css";
-import Display from "./components/Display/Display";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import Tile from "./components/Tile/Tile";
-import Homestead from "./components/Tile/Homestead";
-import LoggingCamp from "./components/Tile/LoggingCamp";
-import Tannery from "./components/Tile/Tannery";
+import Game from "./pages/Game";
+import Profile from "./pages/Profile";
+
+
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const authLink = setContext((_, {headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `User ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
-    <div className="App">
-      <Header ruler="User" civ="Civ" currency="68 coins"></Header>
-      <Display>
-        <div className="row">
-          <Tile>Pioneers</Tile>
-          <Homestead> Homestead</Homestead>
-          <Tannery> Tannery</Tannery>
-          <LoggingCamp> Logging Camp</LoggingCamp>
+    <ApolloProvider client = {client}>
+      <Router>
+        <div className="flex-column justify-flex-start min-100-vh">
+          <Header />
+          <div className="container">
+            <Routes>
+              <Route 
+                path="/Profile" 
+                element={<Profile />} 
+              />
+              <Route 
+                path="/Game" 
+                element={<Game />} 
+              />
+            </Routes>
+          </div>
+          <Footer />
         </div>
-        {/* <div className="row">
-          <Tile> 2A</Tile>
-          <Tile> 2B</Tile>
-          <Tile> 2C</Tile>
-          <Tile> 2D</Tile>
-          
-        </div>
-        <div className="row">
-          <Tile> 3A</Tile>
-          <Tile> 3B</Tile>
-          <Tile> 3C</Tile>
-          <Tile> 3D</Tile>
-          
-        </div>
-        <div className="row">
-          <Tile> 4A</Tile>
-          <Tile> 4B</Tile>
-          <Tile> 4C</Tile>
-          <Tile> 4D</Tile>
-          
-        </div> */}
-      </Display>
-      <Footer></Footer>
-    </div>
-  );
-}
-
+      </Router>
+      </ApolloProvider>
+ );
+ };
 export default App;
