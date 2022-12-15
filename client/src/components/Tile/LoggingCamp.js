@@ -1,22 +1,21 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import tree from "../../GameImages/tree.jpeg";
 
-class LoggingCamp extends Component {
-  render() {
-    let CampsOwned = 0;
+export default function Camp() {
+  let [CampsOwned, setCampsOwned] = useState(0);
 
-    function CampFunction() {
-      // number of Homesteads owned x value of homestead
-    }
-
-    return (
-      <div className="tile">
-        <h1># of Camps Owned:{CampsOwned}</h1>
-        <h1>{this.props.children}</h1>
-        <img src={tree} height="45px"></img>
-      </div>
-    );
+  function AddCamp() {
+    setCampsOwned(CampsOwned++);
+    console.log(CampsOwned);
+    // TODO: should eventually save into db so you dont have to restart every time
   }
-}
 
-export default LoggingCamp;
+  return (
+    <div className="tile">
+      <h1># of Logging Camps Owned:{CampsOwned}</h1>
+      {/* <h1>{this.props.children}</h1> */}
+      <button onClick={AddCamp}>Buy 1 Camp for 100 coins</button>
+      <img src={tree} height="45px"></img>
+    </div>
+  );
+}

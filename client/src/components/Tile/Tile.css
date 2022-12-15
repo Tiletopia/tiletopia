@@ -8,9 +8,9 @@
   font-size: 6px;
 }
 
-.tile:hover {
+/* .tile:hover {
   background-color: #e9edc9;
-}
+} */
 
 .tile.locked {
   background-color: darkgrey;

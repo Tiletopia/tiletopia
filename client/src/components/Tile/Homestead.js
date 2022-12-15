@@ -1,8 +1,9 @@
-import React, { Component, useState } from "react";
+import React, { Component, useEffect, useState } from "react";
 import barn from "../../GameImages/barn.jpeg";
 
 export default function Homestead() {
   let [HomesteadsOwned, setHomesteadsOwned] = useState(0);
+
   function AddHomestead() {
     setHomesteadsOwned(HomesteadsOwned++);
     console.log(HomesteadsOwned);
