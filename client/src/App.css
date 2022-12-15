@@ -1,3 +1,7 @@
+body {
+  background-color: #faedcd;
+}
+
 .row {
   display: flex;
   justify-content: space-around;
