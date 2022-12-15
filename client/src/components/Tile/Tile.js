@@ -7,7 +7,7 @@ class Tile extends Component {
     return (
       <div className="tile">
         <h1>{this.props.children}</h1>
-        <img src={wagon} height="80px"></img>
+        <img src={wagon} height="100px"></img>
       </div>
     );
   }
