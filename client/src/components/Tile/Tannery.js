@@ -12,9 +12,13 @@ export default function Tannery() {
 
   return (
     <div className="tile">
-      <h1># of Tannerys Owned:{TannerysOwned}</h1>
+      <h1>
+        # of Tannerys <br></br>Owned:{TannerysOwned}
+      </h1>
       {/* <h1>{this.props.children}</h1> */}
-      <button onClick={AddTannery}>Buy 1 Tannery for 100 coins</button>
+      <button style={{ height: "40px", fontSize: "10px" }} onClick={AddTannery}>
+        Buy 1 Tannery for 100 coins
+      </button>
       <img src={cow} height="45px"></img>
     </div>
   );

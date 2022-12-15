@@ -14,8 +14,13 @@ export default function Homestead() {
     <div className="tile">
       <h1># of Homesteads Owned:{HomesteadsOwned}</h1>
       {/* <h1>{this.props.children}</h1> */}
-      <button onClick={AddHomestead}>Buy 1 Homestead for 50 coins</button>
-      <img src={barn} height="45px"></img>
+      <button
+        style={{ height: "40px", fontSize: "10px" }}
+        onClick={AddHomestead}
+      >
+        Buy 1 Homestead for 50 coins
+      </button>
+      <img src={barn} height="40px"></img>
     </div>
   );
 }

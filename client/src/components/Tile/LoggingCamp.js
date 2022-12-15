@@ -14,7 +14,9 @@ export default function Camp() {
     <div className="tile">
       <h1># of Logging Camps Owned:{CampsOwned}</h1>
       {/* <h1>{this.props.children}</h1> */}
-      <button onClick={AddCamp}>Buy 1 Camp for 100 coins</button>
+      <button style={{ height: "40px", fontSize: "10px" }} onClick={AddCamp}>
+        Buy 1 Camp for 100 coins
+      </button>
       <img src={tree} height="45px"></img>
     </div>
   );
