@@ -10,13 +10,21 @@ export default function Tannery() {
     // TODO: should eventually save into db so you dont have to restart every time
   }
 
+  function confirmAddTannery() {
+    alert("You bought 1 Tannery!");
+  }
+
   return (
     <div className="tile">
       <h1>
         # of Tannerys <br></br>Owned:{TannerysOwned}
       </h1>
       {/* <h1>{this.props.children}</h1> */}
-      <button style={{ height: "40px", fontSize: "10px" }} onClick={AddTannery}>
+      <button
+        style={{ height: "40px", fontSize: "10px" }}
+        onClick={AddTannery}
+        onDoubleClick={confirmAddTannery}
+      >
         Buy 1 Tannery for 100 coins
       </button>
       <img src={cow} height="45px"></img>

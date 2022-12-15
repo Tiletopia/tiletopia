@@ -10,6 +10,10 @@ export default function Homestead() {
     // TODO: should eventually save into db so you dont have to restart every time
   }
 
+  function confirmAddHomestead() {
+    alert("You bought 1 Homestead!");
+  }
+
   return (
     <div className="tile">
       <h1># of Homesteads Owned:{HomesteadsOwned}</h1>
@@ -17,6 +21,7 @@ export default function Homestead() {
       <button
         style={{ height: "40px", fontSize: "10px" }}
         onClick={AddHomestead}
+        onDoubleClick={confirmAddHomestead}
       >
         Buy 1 Homestead for 50 coins
       </button>
