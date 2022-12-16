@@ -1,16 +1,44 @@
-import React, { Component } from "react";
-import wagon from "../../GameImages/wagon.png";
 import classes from "./Tile.css";
+import React, { Component, useEffect, useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-class Tile extends Component {
-  render() {
-    return (
-      <div className="tile">
-        <h1>{this.props.children}</h1>
-        <img src={wagon} height="80px"></img>
-      </div>
-    );
+export default function Tile(props) {
+  let [ItemsOwned, setItemsOwned] = useState(0);
+
+  function AddItem() {
+    setItemsOwned(ItemsOwned++);
+    console.log("ItemsOwned", ItemsOwned);
+    alert("You bought 1 Item!");
+    // TODO: should eventually save into db so you dont have to restart every time
   }
-}
 
-export default Tile;
+  if (props.eraTile) {
+    return (
+      <div className="era">
+        <h1> {props.tileName} </h1>
+        <FontAwesomeIcon className="icon" icon={props.icon} />
+      </div>
+    )
+  } else if (props.locked){
+    return (
+      <div className="tile locked">
+        <h1> {props.tileName} </h1>
+        <FontAwesomeIcon className="icon" icon={props.icon} />
+        <h1 > complete Pioneers to Unlock</h1>
+      </div>
+      )
+  } else {
+    return (
+    <div className="tile">
+      <h1> {props.tileName}s Owned : {ItemsOwned}</h1>
+      <FontAwesomeIcon className="icon" icon={props.icon} />
+      <button onClick={AddItem} >
+        Buy 1 {props.tileName} for {props.ItemCost} coins
+      </button>
+    </div>
+    )
+  }
+
+ 
+}
+ 
