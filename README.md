@@ -12,6 +12,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   - [Contribution](#contribution)
   - [Tests](#testing)
   - [Questions](#question) -->
+
+![Frontend Progress](./client/src/Assets/localhost_3000_.png)
   
 # === Discussion === 
 ##  database ? 
