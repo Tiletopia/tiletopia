@@ -5,7 +5,10 @@ import classes from './Display.css'
 class Display extends Component {
     render(){
         return(
-        <h1 className='Display'>{this.props.children}</h1> 
+        <div className='Display'>
+            <div className='grid'>{this.props.children}</div>
+             
+        </div> 
         )
    } 
 }
