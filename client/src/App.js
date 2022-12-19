@@ -8,7 +8,7 @@ import Homestead from "./components/Tile/Homestead";
 import LoggingCamp from "./components/Tile/LoggingCamp";
 import Tannery from "./components/Tile/Tannery";
 import React, { useState } from "react";
-import Login from "./components/Preferences/Login";
+import Login from "./components/Preferences/Login/Login";
 
 import {
   faHatCowboySide,
@@ -22,7 +22,22 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
+  
   const [token, setToken] = useState();
+  // error for reassigning const var
+  var [totalCurrency, setTotalCurrency] = useState(10); // 10 defualt state value 
+
+
+  function handleIncrementCurrency (amount) {
+    var newCurrency = totalCurrency + amount
+    console.log("incrementing total currency from ",totalCurrency," to ", newCurrency)
+    setTotalCurrency(newCurrency)
+  }
+  function handleDecrementCurrency (amount) {
+    var newCurrency = totalCurrency - amount
+    console.log("decrementing total currency from ",totalCurrency," to ", newCurrency)
+    setTotalCurrency(newCurrency)
+  }
 
   if (!token) {
     return <Login setToken={setToken} />;
@@ -30,31 +45,92 @@ function App() {
 
   return (
     <div className="App">
-      <Header ruler="User" civ="Civ" currency="68 coins"></Header>
+      <Header ruler="User" civ="Civ" currency={totalCurrency}></Header>
       <Display>
         <div className="row">
-          <Tile tileName="Pioneers" eraTile icon={faHatCowboySide}></Tile>
-          <Tile tileName="HomeStead" ItemCost="1" icon={faHouse}></Tile>
-          <Tile tileName="Tannery" ItemCost="50" icon={faCow}></Tile>
-          <Tile tileName="Logging Camp" ItemCost="100" icon={faTree}></Tile>
+          <Tile 
+            eraTile 
+            tileName="Pioneers" 
+            icon={faHatCowboySide}
+            ></Tile>
+          <Tile 
+            tileName="HomeStead" 
+            ItemCost="1" 
+            icon={faHouse} 
+            baseEarnings="10" 
+            collectAfterSeconds="10" 
+            incrementCurrency={handleIncrementCurrency} 
+            decrementCurrency={handleDecrementCurrency} 
+            totalCurrency={totalCurrency}
+            ></Tile>
+          <Tile 
+            tileName="Tannery" 
+            ItemCost="50" 
+            icon={faCow} 
+            baseEarnings="25" 
+            collectAfterSeconds="20" 
+            incrementCurrency={handleIncrementCurrency} 
+            decrementCurrency={handleDecrementCurrency} 
+            totalCurrency={totalCurrency}
+            ></Tile>
+          <Tile 
+            tileName="Logging Camp" 
+            ItemCost="100" 
+            icon={faTree} 
+            baseEarnings="50" 
+            collectAfterSeconds="30" 
+            incrementCurrency={handleIncrementCurrency} 
+            decrementCurrency={handleDecrementCurrency} 
+            totalCurrency={totalCurrency}
+            ></Tile>
         </div>
 
-        <div className="row">
-          <Tile tileName="Medieval" eraTile icon={faCrown} locked></Tile>
-          <Tile tileName="Quarry" ItemCost="350" icon={faGem} locked></Tile>
+        {/* <div className="row">
+          <Tile 
+            eraTile 
+            tileName="Medieval" 
+            icon={faCrown} 
+            baseEarnings="50" 
+            collectAfterSeconds="30" 
+            incrementCurrency={handleIncrementCurrency} 
+            decrementCurrency={handleDecrementCurrency} 
+            totalCurrency={totalCurrency}
+            locked
+            ></Tile>
+          <Tile 
+            tileName="Quarry" 
+            ItemCost="350" 
+            icon={faGem} 
+            baseEarnings="50" 
+            collectAfterSeconds="30" 
+            incrementCurrency={handleIncrementCurrency} 
+            decrementCurrency={handleDecrementCurrency} 
+            totalCurrency={totalCurrency}
+            locked
+            ></Tile>
           <Tile
             tileName="Blacksmith"
             ItemCost="600"
             icon={faShieldHalved}
+            baseEarnings="50" 
+            collectAfterSeconds="30" 
+            incrementCurrency={handleIncrementCurrency} 
+            decrementCurrency={handleDecrementCurrency} 
+            totalCurrency={totalCurrency}
             locked
           ></Tile>
           <Tile
             tileName="Castle"
             ItemCost="1000"
             icon={faChessRook}
+            baseEarnings="50" 
+            collectAfterSeconds="30" 
+            incrementCurrency={handleIncrementCurrency} 
+            decrementCurrency={handleDecrementCurrency} 
+            totalCurrency={totalCurrency}
             locked
           ></Tile>
-        </div>
+        </div> */}
       </Display>
       <Footer></Footer>
     </div>

@@ -14,7 +14,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   - [Questions](#question) -->
 
 ![Frontend Progress](./client/src/Assets/localhost_3000_.png)
-  
+
 # === Discussion === 
 ##  database ? 
 - send everything to database (everytime i collect a coin)

@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import classes from './Login.css'
 
 async function loginUser(credentials) {
+
+  // api server running on 3001/holds test token : "test123"
   return fetch("http://localhost:3000", {
     method: "POST",
     headers: {
@@ -14,24 +17,41 @@ async function loginUser(credentials) {
 export default function Login({ setToken }) {
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
+  const [civName, setCivName] = useState();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const token = await loginUser({
+
+    // this returns default token hardcoded in server/server.js : "test123"
+    const LoginToken = await loginUser({
       username,
       password,
+      civName
     });
-    setToken(token);
+    console.log("setting token now", LoginToken)
+    setToken(LoginToken);
   };
 
   return (
-    <div>
-      <h1>Please Log In</h1>
+    <div className="Login">
+      <h1>Sign Up</h1>
+      <h4>Create a new Civilization!</h4>
       <form onSubmit={handleSubmit}>
         <label>
-          <p>Username</p>
-          <input type="text" onChange={(e) => setUserName(e.target.value)} />
+          <p>Civilization Name</p>
+          <input
+            type="text"
+            onChange={(e) => setCivName(e.target.value)}
+          />
         </label>
+
+        <label>
+          <p>Username</p>
+          <input
+           type="text" 
+           onChange={(e) => setUserName(e.target.value)} />
+        </label>
+
         <label>
           <p>Password</p>
           <input
