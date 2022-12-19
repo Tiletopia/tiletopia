@@ -1,5 +1,5 @@
 import React, { Component, useState } from "react";
-import tree from "../../GameImages/tree.jpeg";
+// import tree from "../../GameImages/tree.jpeg";
 
 export default function Camp() {
   let [CampsOwned, setCampsOwned] = useState(0);
@@ -21,7 +21,7 @@ export default function Camp() {
       <button style={{ height: "40px", fontSize: "10px" }} onClick={AddCamp}>
         Buy 1 Camp for 100 coins
       </button>
-      <img src={tree} height="45px"></img>
+      {/* <img src={tree} height="45px"></img> */}
     </div>
   );
 }

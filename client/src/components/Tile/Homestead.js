@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useState } from "react";
-import barn from "../../GameImages/barn.jpeg";
+// import barn from "../../GameImages/barn.jpeg";
 
 export default function Homestead() {
   let [HomesteadsOwned, setHomesteadsOwned] = useState(0);
@@ -24,7 +24,7 @@ export default function Homestead() {
       >
         Buy 1 Homestead for 50 coins
       </button>
-      <img src={barn} height="40px"></img>
+      {/* <img src={barn} height="40px"></img> */}
     </div>
   );
 }

@@ -26,7 +26,6 @@
 }
 
 .era h1{
-  /* position: absolute; */
   margin-left: .5vw;
   margin-top: 1vw;
   font-weight: 900;
@@ -34,27 +33,118 @@
   z-index: 100;
 }
 
-/* .tile:hover {
-  background-color: #e9edc9;
-} */
+.tile .title{
+  display: flex;
+  margin: 0 auto;
+}
+ 
 
 .tile button{
-  height: 40px;
-  font-size: 10px;  
+  height: 2vw;
+  font-size: 0.6rem;  
+  padding: 0;
 }
 
-.tile img{
-  height: 40px;
-  width: 40px;
+.tile div.button-container{
+  display: flex;
 }
 
+.tile button.buy, .tile button.collect{
+  width: 50%;
+}
+ 
 .icon {
-  font-size: 90px;
+  font-size: 4rem;
 }
-
-
 
 .tile.locked {
   background-color: darkgrey;
   justify-content: space-evenly;
 }
+
+ 
+
+@media screen and (max-width: 1300px) {
+  .tile, .era{
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .icon {
+    font-size: 4rem;
+  }
+}
+ 
+@media screen and (max-width: 900px) {
+  .tile, .era{
+    width: 17vw;
+    height: 17vw;
+  }
+
+  .icon {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tile, .era{
+    width: 25vw;
+    height: 25vw;
+    margin: 2%;
+  }
+  .tile .button-container{
+    flex-direction: column;
+  }
+  .tile button.buy, .tile button.collect{
+    width: 80%;
+    margin: 5px auto;
+  }
+  .icon{
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .tile button{
+    height: 2.5vw;
+  }
+  .tile button.buy, .tile button.collect{
+    width: 80%;
+    margin: 2px auto;
+  }
+  .icon{
+    font-size: 2rem;
+  }
+  .era h1{
+    font-size: 1.3rem;
+  }
+
+}
+
+
+@media screen and (max-width: 425px) {
+  .tile, .era {
+     width: 50vw;
+     height: 50vw;
+  }
+
+  .icon{
+    font-size: 3rem;
+  }
+
+  .era h1{
+    font-size: 2rem;
+  }
+
+  .tile .title{
+    font-size: .7rem;
+  }
+
+  .tile button{
+    height: 5vw;
+  }
+
+}
+ 
+ 
+
