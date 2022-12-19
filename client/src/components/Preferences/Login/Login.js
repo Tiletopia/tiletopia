@@ -4,15 +4,25 @@ import classes from './Login.css'
 
 async function loginUser(credentials) {
 
+  setLocalStorage(credentials)
   // api server running on 3001/holds test token : "test123"
-  return fetch("http://localhost:3000", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(credentials),
-  }).then((data) => data.json());
+    return fetch("http://localhost:3000", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(credentials),
+    }).then((data) =>  data.json() );
+ 
 }
+
+async function setLocalStorage(credentials){
+  console.log("setting local storage", credentials)
+
+  window.localStorage.setItem("username", credentials.username);
+  window.localStorage.setItem("civName", credentials.civName);
+}
+
 
 export default function Login({ setToken }) {
   const [username, setUserName] = useState();
@@ -23,12 +33,10 @@ export default function Login({ setToken }) {
     e.preventDefault();
 
     // this returns default token hardcoded in server/server.js : "test123"
-    const LoginToken = await loginUser({
-      username,
-      password,
-      civName
+    const LoginToken = await loginUser( {
+      username, password, civName
     });
-    console.log("setting token now", LoginToken)
+    console.log("setting LoginToken", LoginToken)
     setToken(LoginToken);
   };
 

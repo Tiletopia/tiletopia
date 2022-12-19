@@ -26,7 +26,10 @@ function App() {
   const [token, setToken] = useState();
   // error for reassigning const var
   var [totalCurrency, setTotalCurrency] = useState(10); // 10 defualt state value 
+  var username= window.localStorage.getItem("username");
+  var civName= window.localStorage.getItem("civName");
 
+  console.log(username, civName)
 
   function handleIncrementCurrency (amount) {
     var newCurrency = totalCurrency + amount
@@ -45,7 +48,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header ruler="User" civ="Civ" currency={totalCurrency}></Header>
+      <Header ruler={username} civ={civName} currency={totalCurrency}></Header>
       <Display>
         <div className="row">
           <Tile 

@@ -24,7 +24,6 @@ export default function Tile(props) {
  
   function collectEarnings () {
     if ( ItemsOwned >= 1 && !props.eraTile){
-      console.log("Collectin gearnings clicked")
       
       var earnings = Number(props.baseEarnings) * ItemsOwned
       console.log("collecting ", earnings ,"for ",props.tileName , "in tile.js")
