@@ -18,3 +18,9 @@ button {
 button:hover {
   background-color: #fefae0;
 }
+
+@media screen and (max-width: 768px) {
+   .Footer{
+    position: unset;
+   }
+}

@@ -3,7 +3,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
   ## Table of Contents
-  - [Discussion](#Discussion)
   - [App Planning](#APP-PLANNING)
   - [Stretch Goals](#stretch-goals)
   <!-- - [Installation](#installation)
@@ -13,20 +12,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   - [Tests](#testing)
   - [Questions](#question) -->
 
-![Frontend Progress](./client/src/Assets/localhost_3000_.png)
-
-## sunday
-- ruler user - civ name
-- unlock medieval
-- 
-
-
-# === Discussion === 
-##  database ? 
-- send everything to database (everytime i collect a coin)
-- or update everything using react state, then send to database on gamesave/autosave
-
--  undecided / needs input <<<<<<<<<<<<<<<<<<<<<<<<
 
 # === APP-PLANNING ===
 ## notes and homestead tile example 
@@ -73,8 +58,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     - pull from tiles timer  
     - `<Tile collectAfterSeconds="10">` 
     - increment total currency (state)
-        - >> passive collect <<
-        - click to collect
+        -  passive collect 
+        - >> click to collect <<
 
 - buy another tile
 
@@ -97,6 +82,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     - column - tile - 123
 - multiple rows
 - choose avatar? 
+
+![Frontend Progress](./client/src/Assets/desktop.png)
+![Frontend Progress](./client/src/Assets/tablet.png)
+![Frontend Progress](./client/src/Assets/mobile.png)
+![Frontend Progress](./client/src/Assets/progress.png)
 
 ## Available Scripts
 

@@ -56,10 +56,12 @@ export default function Tile(props) {
   } else {
     return (
       <div className="tile">
-        <h1>
-          {" "}
-          {props.tileName}s Owned : {ItemsOwned}
-        </h1>
+
+        <div className="title">
+          <h1> {props.tileName}s :</h1> 
+          <h1>{ItemsOwned}</h1>
+        </div>
+        
         <FontAwesomeIcon className="icon" icon={props.icon} />
 
         <div className="button-container">
