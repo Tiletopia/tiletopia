@@ -1,5 +1,5 @@
 import React, { Component, useState } from "react";
-import cow from "../../GameImages/cow.png";
+// import cow from "../../GameImages/cow.png";
 
 export default function Tannery() {
   let [TannerysOwned, setTannerysOwned] = useState(0);
@@ -23,7 +23,7 @@ export default function Tannery() {
       <button style={{ height: "40px", fontSize: "10px" }} onClick={AddTannery}>
         Buy 1 Tannery for 100 coins
       </button>
-      <img src={cow} height="45px"></img>
+      {/* <img src={cow} height="45px"></img> */}
     </div>
   );
 }

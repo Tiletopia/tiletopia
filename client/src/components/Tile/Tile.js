@@ -5,12 +5,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function Tile(props) {
 
   let [ItemsOwned, setItemsOwned] = useState(0);
+  const [load, setLoad] = React.useState(true);
 
   function AddItem() {
     if(props.ItemCost <= props.totalCurrency){
       setItemsOwned(++ItemsOwned);
       props.decrementCurrency(props.ItemCost)
       console.log(props.tileName, "ItemsOwned", ItemsOwned);
+
+      setLoad(false)
+       
     } else {
       console.log("not enough money!")
     }
@@ -20,28 +24,19 @@ export default function Tile(props) {
  
   function collectEarnings () {
     if ( ItemsOwned >= 1 && !props.eraTile){
+      console.log("Collectin gearnings clicked")
       
       var earnings = Number(props.baseEarnings) * ItemsOwned
       console.log("collecting ", earnings ,"for ",props.tileName , "in tile.js")
       props.incrementCurrency( earnings )
+      
+      setLoad(true)
+      setTimeout(() => {
+        setLoad(false)
+      },  props.collectAfterSeconds * 1000);// multiply for milliseconds
     }
-
   }
 
-  if (ItemsOwned >= 1 && !props.eraTile){ 
-      var EarningsInterval = setInterval( () => {collectEarnings()} , props.collectAfterSeconds * 1000); // multiply for milliseconds
-  }
-
-
-  useEffect(() => {
-    if (!props.eraTile){
-      
-      console.log(ItemsOwned, 'ItemsOwned Has changed')
-      clearInterval(EarningsInterval);
-      
-      EarningsInterval = setInterval(  () => {collectEarnings()} , props.collectAfterSeconds * 1000);
-    }
-  },[ItemsOwned]) // <-- here put the parameter to listen
  
 
   if (props.eraTile) {
@@ -68,9 +63,16 @@ export default function Tile(props) {
         </h1>
         <FontAwesomeIcon className="icon" icon={props.icon} />
 
-        <button onClick={AddItem}>
-          Buy 1 {props.tileName} for {props.ItemCost} coins
-        </button>
+        <div className="button-container">
+
+          <button className="buy" onClick={AddItem}>
+            Buy for {props.ItemCost}c  
+          </button>
+
+          <button className="collect" onClick={collectEarnings} disabled={load}>
+            collect {Number(props.baseEarnings) * ItemsOwned}c  
+          </button>
+        </div>
  
 
       </div>

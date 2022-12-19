@@ -15,6 +15,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ![Frontend Progress](./client/src/Assets/localhost_3000_.png)
 
+## sunday
+- ruler user - civ name
+- unlock medieval
+- 
+
+
 # === Discussion === 
 ##  database ? 
 - send everything to database (everytime i collect a coin)

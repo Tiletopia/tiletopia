@@ -26,33 +26,31 @@
 }
 
 .era h1{
-  /* position: absolute; */
   margin-left: .5vw;
   margin-top: 1vw;
   font-weight: 900;
   font-size: 25px;
   z-index: 100;
 }
-
-/* .tile:hover {
-  background-color: #e9edc9;
-} */
+ 
 
 .tile button{
   height: 40px;
   font-size: 10px;  
+  padding: 0;
 }
 
-.tile img{
-  height: 40px;
-  width: 40px;
+.tile div.button-container{
+  display: flex;
 }
 
+.tile button.buy, .tile button.collect{
+  width: 50%;
+}
+ 
 .icon {
   font-size: 90px;
 }
-
-
 
 .tile.locked {
   background-color: darkgrey;

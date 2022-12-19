@@ -85,7 +85,7 @@ function App() {
             ></Tile>
         </div>
 
-        {/* <div className="row">
+        <div className="row">
           <Tile 
             eraTile 
             tileName="Medieval" 
@@ -130,7 +130,7 @@ function App() {
             totalCurrency={totalCurrency}
             locked
           ></Tile>
-        </div> */}
+        </div>
       </Display>
       <Footer></Footer>
     </div>
