@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   ## Table of Contents
   - [Stretch Goals](#stretch-goals)
   - [Installation](#installation)
-  - [Available Scripts](#Available Scripts)
+  - [Available Scripts](#available scripts)
   - [Usage](#usage)
   - [License](#license)
   - [Contribution](#contribution)
