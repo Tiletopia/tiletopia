@@ -3,92 +3,26 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
   ## Table of Contents
-  - [App Planning](#APP-PLANNING)
-  - [Stretch Goals](#stretch-goals)
-  <!-- - [Installation](#installation)
+  - [Images](#images)
+  - [Installation](#installation)
+  - [Available Scripts](#available-scripts)
   - [Usage](#usage)
   - [License](#license)
+  - [Stretch Goals](#stretch-goals)
   - [Contribution](#contribution)
-  - [Tests](#testing)
-  - [Questions](#question) -->
+  - [Questions](#question)
+
+## Images 
+
+![image](https://user-images.githubusercontent.com/107777027/208558191-4bdd36fb-df8b-4e8f-9d4b-ae9f8f79e9ac.png)
+![image](https://user-images.githubusercontent.com/107777027/208558551-f6853913-84d9-4aa1-87c6-97e29b762475.png)
 
 
-# === APP-PLANNING ===
-## notes and homestead tile example 
-<Tile 
-    id="A1"
-    tileId='1'  
-    tileName="Homestead" 
-    baseTileCost="5" 
-    upgradeCost={baseCost*50} 
-    buyAnotherItem={baseCost*25}
-    collectAfterSeconds="10" 
-    baseEarnings="5" 
-    isUnlocked
-    upgradeLevel="1"
-    itemCount="1"
->
+## Installation
 
-## locked tile class
-- if this.props.isUnlocked = true/false (boolean)
-    - this.props.isUnlocked ? className=" HomeStead" : className=" Locked"
+Clone the repo. NPM i in both the project directory and in the client folder. Then run npm start.
 
-## only buy tile if tile to the left is unlocked
-- check tile id-1 is unlocked                                           <<<<<<<<<<<<<<<<<<<<<<<<
-    - document.getelementbyid("A1") check if prop.isUnlocked
-- list of unlocked tiles ?
-    - state= unlockedTiles = { {A: [1,2,3]}, {B: [1,2,3]}}
-
-# === BASE TASKS / MVP ===
-- login/authentication (DB)
-- save game (DB)
-    - save state
-        - tileStateArray? get states from each tile (save what tiles are unlocked, upgradeLevel, itemCount etc... )
-
-- locked tile class
-
-- buy a tile
-    - first tile free - makes 5 coins every 10 seconds
-    - `<Tile baseTileCost="5" >`
-    - onclick check `totalCurrency > baseTileCost && `
-        - if : unlock tile and start incrementing
-        - else : alert (for now) "not enough money!"
-
-- earn money
-    - pull from tiles timer  
-    - `<Tile collectAfterSeconds="10">` 
-    - increment total currency (state)
-        -  passive collect 
-        - >> click to collect <<
-
-- buy another tile
-
-- upgrade a tile
-    - `baseTileCost * 50`
-    - decrease `collectAfterSeconds` - decrease by 2 seconds
-    - `<Tile upgradeLevel="1">`
-    - **how to track upgradeLevel?**                                    <<<<<<<<<<<<<<<<<<<<<<<<  
-    
-- number of items owned (buying another homestead on homestead tile)
-    - `baseTileCost * 25`
-    - increase earnings ( `<Tile baseEarnings="5">` ) - increase by 5 coins (baseEarnings * 5)
-    - **how to track itemCount?**                                    <<<<<<<<<<<<<<<<<<<<<<<<  
-
-
-## stretch-goals
-
-- tileRowId="A" & tileColumnId='1'
-    - row - era - ABC
-    - column - tile - 123
-- multiple rows
-- choose avatar? 
-
-![Frontend Progress](./client/src/Assets/desktop.png)
-![Frontend Progress](./client/src/Assets/tablet.png)
-![Frontend Progress](./client/src/Assets/mobile.png)
-![Frontend Progress](./client/src/Assets/progress.png)
-
-## Available Scripts
+## Available-scripts 
 
 In the project directory, you can run:
 
@@ -114,3 +48,28 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+## Usage
+
+Free to use!
+
+## License 
+
+Creative Commons Zero v1.0
+
+## Stretch-goals
+
+Our stretch goal is to add additional rows of content, allowing the player to progress into new eras. 
+
+## Contributions 
+
+Alyssa, Brooke, Hunter and Spencer
+You can see our github pages at -
+Spencer - https://github.com/SpencerNelsonUW
+Brooke - https://github.com/bburton5
+Hunter - https://github.com/hunter-williams
+Alyssa - https://github.com/alyesp
+
+## Questions
+Questions can be sent to -
+Spencernelsonn@gmail.com
