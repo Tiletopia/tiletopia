@@ -3,17 +3,20 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
   ## Table of Contents
-  - [Stretch Goals](#stretch-goals)
+  - [Images](#images)
   - [Installation](#installation)
   - [Available Scripts](#available-scripts)
   - [Usage](#usage)
   - [License](#license)
+  - [Stretch Goals](#stretch-goals)
   - [Contribution](#contribution)
   - [Questions](#question)
 
-## Stretch-goals
+## Images 
 
-Our stretch goal is to add additional rows of content, allowing the player to progress into new eras. 
+![image](https://user-images.githubusercontent.com/107777027/208558191-4bdd36fb-df8b-4e8f-9d4b-ae9f8f79e9ac.png)
+![image](https://user-images.githubusercontent.com/107777027/208558551-f6853913-84d9-4aa1-87c6-97e29b762475.png)
+
 
 ## Installation
 
@@ -53,6 +56,10 @@ Free to use!
 ## License 
 
 Creative Commons Zero v1.0
+
+## Stretch-goals
+
+Our stretch goal is to add additional rows of content, allowing the player to progress into new eras. 
 
 ## Contributions 
 
