@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   ## Table of Contents
   - [Stretch Goals](#stretch-goals)
   - [Installation](#installation)
-  - [Available Scripts](#available scripts)
+  - [Available Scripts](#available-scripts)
   - [Usage](#usage)
   - [License](#license)
   - [Contribution](#contribution)
@@ -19,7 +19,7 @@ Our stretch goal is to add additional rows of content, allowing the player to pr
 
 Clone the repo. NPM i in both the project directory and in the client folder. Then run npm start.
 
-## Available Scripts 
+## Available-scripts 
 
 In the project directory, you can run:
 
