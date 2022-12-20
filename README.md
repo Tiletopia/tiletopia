@@ -59,6 +59,9 @@ Creative Commons Zero v1.0
 Alyssa, Brooke, Hunter and Spencer
 You can see our github pages at -
 Spencer - https://github.com/SpencerNelsonUW
+Brooke - https://github.com/bburton5
+Hunter - https://github.com/hunter-williams
+Alyssa - https://github.com/alyesp
 
 ## Questions
 Questions can be sent to -
